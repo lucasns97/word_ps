@@ -30,24 +30,24 @@ score = word_similarity(string1, string2)
 
 ### Updating package
 
-0. Install twine
+1. Install twine
     ```bash
     $ pip install twine
     ```
-1. Check you are in the root of the project
+2. Check you are in the root of the project
     ```bash
     ~/.../word_ps$ ls
     dist  LICENCE  pyproject.toml  README.md  requirements.txt  setup.cfg  setup.py  src  tests
     ```
-2. Run setup:
+3. Run setup:
     ```bash
     $ python setup.py sdist
     ```
-3. Run twine (*check if ```dist/``` has only latest package*):
+4. Run twine (*check if ```dist/``` has only latest package*):
     ```bash
     $ twine upload dist/*
     ```
-4. Update git:
+5. Update git:
     ```bash
     $ git add . && git commit -m "update dist files" && git push
     ```
