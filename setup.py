@@ -22,7 +22,7 @@ extras = {
 
 setup(
     name="word_ps",
-    version="0.1.0",
+    version="0.1.1",
     author="Lucas Nunes Sequeira",
     author_email="lucasnseq@gmail.com",
     description="Tools for word similarity",

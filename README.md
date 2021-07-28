@@ -27,3 +27,25 @@ string2 = "I love pinaple"
 
 score = word_similarity(string1, string2)
 ```
+
+0. Install twine
+    ```bash
+    $ pip install twine
+    ```
+1. Check you are in the root of the project
+    ```bash
+    ~/.../word_ps$ ls
+    dist  LICENCE  pyproject.toml  README.md  requirements.txt  setup.cfg  setup.py  src  tests
+    ```
+2. Run setup:
+    ```bash
+    $ python setup.py sdist
+    ```
+3. Run twine:
+    ```bash
+    $ twine upload dist/*
+    ```
+4. Update git:
+    ```bash
+    $ git add . && git commit -m "update dist files" && git push
+    ```
