@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/word_ps/__init__.py
+src/word_ps/utils.py
+src/word_ps/word_similarity.py
+src/word_ps.egg-info/PKG-INFO
+src/word_ps.egg-info/SOURCES.txt
+src/word_ps.egg-info/dependency_links.txt
+src/word_ps.egg-info/requires.txt
+src/word_ps.egg-info/top_level.txt

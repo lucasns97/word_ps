@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: word-ps
+Version: 0.1.0
+Summary: Tools for word similarity
+Home-page: https://github.com/lucasns97/word_ps
+Author: Lucas Nunes Sequeira
+Author-email: lucasnseq@gmail.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/lucasns97/word_ps/issues
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7.0
+Provides-Extra: testing
