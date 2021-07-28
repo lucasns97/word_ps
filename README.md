@@ -43,11 +43,10 @@ score = word_similarity(string1, string2)
     ```bash
     $ python setup.py sdist
     ```
-3. Run twine:
+3. Run twine (*Check if dist/ has only latest package*):
     ```bash
     $ twine upload dist/*
     ```
-    *Check if dist/ has only latest package*
 4. Update git:
     ```bash
     $ git add . && git commit -m "update dist files" && git push
