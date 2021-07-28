@@ -43,7 +43,7 @@ score = word_similarity(string1, string2)
     ```bash
     $ python setup.py sdist
     ```
-3. Run twine (*check if dist/ has only latest package*):
+3. Run twine (*check if ```dist/``` has only latest package*):
     ```bash
     $ twine upload dist/*
     ```
