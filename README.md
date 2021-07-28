@@ -28,6 +28,8 @@ string2 = "I love pinaple"
 score = word_similarity(string1, string2)
 ```
 
+### Updating package
+
 0. Install twine
     ```bash
     $ pip install twine
@@ -45,6 +47,7 @@ score = word_similarity(string1, string2)
     ```bash
     $ twine upload dist/*
     ```
+    *Check if dist/ has only latest package*
 4. Update git:
     ```bash
     $ git add . && git commit -m "update dist files" && git push
