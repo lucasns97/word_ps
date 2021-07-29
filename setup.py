@@ -11,7 +11,7 @@ with open(join(dirname(__file__), "src/word_ps", "__init__.py")) as fp:
     else:
         raise RuntimeError("Unable to find own __version__ string")
 
-with open("requirements.txt") as f:
+with open("./requirements.txt") as f:
     requirements = f.read().splitlines()
 
 extras = {
@@ -22,7 +22,7 @@ extras = {
 
 setup(
     name="word_ps",
-    version="0.1.1",
+    version="0.1.2",
     author="Lucas Nunes Sequeira",
     author_email="lucasnseq@gmail.com",
     description="Tools for word similarity",
