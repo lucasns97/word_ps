@@ -147,3 +147,55 @@ def weighted_similarity(trg: str, hyp: str, bidirectional: bool=False, split_met
             weight += wg
         
     return score/weight
+
+def ngrams_weighted_similarity(trg: str, hyp: str, bidirectional: bool=False, split_method: str="split", ngrams: int = 3) -> float:
+    '''Calculates the weighted similarity between the ngrams of target and hypotheis
+
+        Parameters:
+            trg (str): String with the target word.
+            hyp (str): String with the hypothesis word.
+            bidirectional (bool): If true, the similarity is calculated in both directions.
+            split_method (str): Method to be used to split the strings. Should be "split" or "tokenize".
+            ngrams (int): Number of ngrams (from 1 to ngrams) to be extracted from target and hypothesis
+
+        Returns:
+            float: Weighted similarity between the two strings considering number of ngrams (from 1 to ngrams, max_sentgrams).
+    '''
+
+    assert split_method in ["split", "tokenize"]
+
+    # Iniailize score
+    score = 0
+    ngrams_loop_count = 0
+
+    for i in range(1, ngrams+1):
+
+        # Extract ngrams
+        trg_ngrams = extract_ngrams(trg, i, split_method)
+        hyp_ngrams = extract_ngrams(hyp, i, split_method)
+
+        # Ngram score and loop count
+        ngram_score = 0
+        loop_count = 0
+
+        # Calculate weigthed similarity for each ngram pair
+        for trg_ngram, hyp_ngram in zip(trg_ngrams, hyp_ngrams):
+
+            if not trg_ngram or not hyp_ngram: break
+
+            # Accumulate score
+            ngram_score = ngram_score + weighted_similarity(trg_ngram, hyp_ngram, bidirectional, split_method)
+            loop_count += 1
+        
+        if loop_count > 0:
+            ngrams_loop_count += 1
+            ngram_score = ngram_score/loop_count
+
+            # Add ngram score to the total score
+            score = score + ngram_score
+    
+    # Normalize score
+    score = score/ngrams_loop_count
+
+    return score
+
