@@ -198,4 +198,3 @@ def ngrams_weighted_similarity(trg: str, hyp: str, bidirectional: bool=False, sp
     score = score/ngrams_loop_count
 
     return score
-

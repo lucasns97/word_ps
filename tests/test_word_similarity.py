@@ -54,7 +54,7 @@ class TestWordSimilarity(TestCase):
         '''Tests ngrams weighted similarity method'''
 
         # Params
-        trg = "Batata frita quente"
+        trg = "Batata quente"
         hyp = "Batata frita"
 
         for split_method in ['split', 'tokenize']:
