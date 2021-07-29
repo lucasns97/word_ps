@@ -194,7 +194,10 @@ def ngrams_weighted_similarity(trg: str, hyp: str, bidirectional: bool=False, sp
             # Add ngram score to the total score
             score = score + ngram_score
     
-    # Normalize score
-    score = score/ngrams_loop_count
-
+    if ngrams_loop_count > 0:
+        # Normalize score
+        score = score/ngrams_loop_count
+    else:
+        score = 0.0
+    
     return score
