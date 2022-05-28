@@ -18,7 +18,7 @@ $ pip install word_ps
 
 This method calculates a number between 0 and 1 to measure how to strings are similar to each other. It uses continuous substring matching weighted by the strings lengths.
 
-*Example*
+**Example**
 ```python
 from word_ps.word_similarity import weighted_similarity
 
