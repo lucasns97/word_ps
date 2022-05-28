@@ -4,8 +4,8 @@ from os.path import dirname, join
 from setuptools import find_packages, setup
 
 # CONFIG
-APP_DIR = "app/"
-SRC_DIR = f"{APP_DIR}src/"
+APP_DIR = "app"
+SRC_DIR = "word_ps"
 REQUIREMENT_FILENAMES = {
     "app": "requirements.txt",
     "extra.testing": "requirements-testing.txt"
@@ -20,7 +20,7 @@ def get_version():
     --------
         string: Version number
     """
-    with open(join(dirname(__file__), SRC_DIR, "__init__.py")) as fp:
+    with open(join(dirname(__file__), APP_DIR, SRC_DIR, "__init__.py")) as fp:
         for line in fp:
             m = re.search(r'^\s*__version__\s*=\s*([\'"])([^\'"]+)\1\s*$', line)
             if m:
@@ -28,7 +28,6 @@ def get_version():
                 break
         else:
             raise RuntimeError("Unable to find own __version__ string")
-
     return version
 
 def get_requirements(filename):
@@ -50,12 +49,12 @@ def get_requirements(filename):
 VERSION = get_version()
 
 # Get requirements
-INSTALL_REQUIREMENTS = get_requirements(REQUIREMENT_FILENAMES.get('app'))
+INSTALL_REQUIREMENTS = ["nltk>=3.6.0"]
 EXTRAS_REQUIREMENTS = {
-    "testing": get_requirements(REQUIREMENT_FILENAMES.get('extra.testing'))
+    "testing": ["pytest>=4.4.0"]
 }
 
-# Run setup
+
 setup(
     name="word_ps",
     version=VERSION,
@@ -67,8 +66,8 @@ setup(
     project_urls={
         "Bug Tracker": "https://github.com/lucasns97/word_ps/issues",
     },
-    package_dir={"": "app/src"},
-    packages=find_packages(where="app/src"),
+    package_dir={"": "app"},
+    packages=find_packages(where="app/word_ps"),
     install_requires=INSTALL_REQUIREMENTS,
     extras_require=EXTRAS_REQUIREMENTS,
     python_requires=">=3.7.0",
