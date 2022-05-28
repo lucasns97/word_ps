@@ -1,4 +1,0 @@
-nltk>=3.6.0
-
-[testing]
-pytest>=4.4.0
