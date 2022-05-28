@@ -9,7 +9,7 @@
 **Installing the dependency**
 
 ```bash
-$ pip install word_ps
+$ pip install word-ps
 ```
 
 ### Using
