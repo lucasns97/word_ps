@@ -6,7 +6,7 @@
 
 from unittest import TestCase
 
-from word_ps.utils import extract_ngrams
+from src.utils.word_utils import extract_ngrams
 
 class TestUtils(TestCase):
 
