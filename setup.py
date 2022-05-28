@@ -58,7 +58,7 @@ EXTRAS_REQUIREMENTS = {
 # Run setup
 setup(
     name="word_ps",
-    version="0.1.3",
+    version=VERSION,
     author="Lucas Nunes Sequeira",
     author_email="lucasnseq@gmail.com",
     description="Tools for word similarity",
